@@ -1,0 +1,83 @@
+@model Resume
+
+@{
+    ViewData["Title"] = Model.FullName + "'s Resume";
+}
+
+<div class="resume-container">
+    <div class="resume-header">
+        <h1>@Model.FullName</h1>
+        <p>Email: @Model.Email | Phone: @Model.Phone</p>
+    </div>
+    
+    @if (!string.IsNullOrEmpty(Model.Summary))
+    {
+        <div class="resume-section">
+            <h2>Professional Summary</h2>
+            <p>@Html.Raw(Model.Summary.Replace("\n", "<br>"))</p>
+        </div>
+    }
+    
+    @if (!string.IsNullOrEmpty(Model.Education))
+    {
+        <div class="resume-section">
+            <h2>Education</h2>
+            <p>@Html.Raw(Model.Education.Replace("\n", "<br>"))</p>
+        </div>
+    }
+    
+    @if (!string.IsNullOrEmpty(Model.Experience))
+    {
+        <div class="resume-section">
+            <h2>Experience</h2>
+            <p>@Html.Raw(Model.Experience.Replace("\n", "<br>"))</p>
+        </div>
+    }
+    
+    @if (!string.IsNullOrEmpty(Model.Skills))
+    {
+        <div class="resume-section">
+            <h2>Skills</h2>
+            <p>@Html.Raw(Model.Skills.Replace("\n", "<br>"))</p>
+        </div>
+    }
+</div>
+
+<div class="mt-4">
+    <a href="/Resume/PrintResume/@Model.Id" class="btn btn-primary" target="_blank">Print Resume</a>
+    <a href="/Resume" class="btn btn-secondary">Back to List</a>
+</div>
+
+<style>
+    .resume-container {
+        font-family: 'Arial', sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    .resume-header {
+        text-align: center;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 20px;
+    }
+    
+    .resume-header h1 {
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+    
+    .resume-section {
+        margin-bottom: 20px;
+    }
+    
+    .resume-section h2 {
+        color: #007bff;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+        font-size: 1.3em;
+    }
+</style>

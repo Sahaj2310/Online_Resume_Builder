@@ -1,0 +1,52 @@
+@model Resume
+
+@{
+    ViewData["Title"] = "Create Resume";
+}
+
+<h1>Create Resume</h1>
+
+<form method="post" action="/Resume/Create">
+    
+    <div class="form-group">
+        <label for="FullName">Full Name*</label>
+        <input type="text" class="form-control" id="FullName" name="FullName" required>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.FullName)</span>
+    </div>
+    
+    <div class="form-group">
+        <label for="Email">Email*</label>
+        <input type="email" class="form-control" id="Email" name="Email" required>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
+    </div>
+    
+    <div class="form-group">
+        <label for="Phone">Phone*</label>
+        <input type="text" class="form-control" id="Phone" name="Phone" required>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Phone)</span>
+    </div>
+    
+    <div class="form-group">
+        <label for="Summary">Professional Summary</label>
+        <textarea class="form-control" id="Summary" name="Summary"></textarea>
+    </div>
+    
+    <div class="form-group">
+        <label for="Education">Education</label>
+        <textarea class="form-control" id="Education" name="Education"></textarea>
+    </div>
+    
+    <div class="form-group">
+        <label for="Experience">Experience</label>
+        <textarea class="form-control" id="Experience" name="Experience"></textarea>
+    </div>
+    
+    <div class="form-group">
+        <label for="Skills">Skills</label>
+        <textarea class="form-control" id="Skills" name="Skills"></textarea>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Create Resume</button>
+    <a href="/Resume" class="btn btn-secondary">Cancel</a>
+</form>
+
