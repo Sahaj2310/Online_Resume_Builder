@@ -24,10 +24,10 @@ Before running the project, ensure you have the following installed:
    dotnet restore
 
 3. Configure the database connection in appsettings.json:
-
+   ```bash
    {
   "ConnectionStrings": {
     "ResumeContext": "Data Source=your_database_file.db"
-  }
- }
+     }
+    }
 
