@@ -25,9 +25,16 @@ Before running the project, ensure you have the following installed:
 
 3. Configure the database connection in appsettings.json:
    ```bash
-   {
-  "ConnectionStrings": {
+   { "ConnectionStrings": {
     "ResumeContext": "Data Source=your_database_file.db"
      }
     }
+
+4. Apply database migrations:
+   ```bash
+   dotnet ef database update
+
+5. Run the application:
+   ```bash
+   dotnet run
 
