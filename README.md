@@ -2,19 +2,6 @@
 
 A web-based application that allows users to create, manage, and download resumes in multiple formats. It provides several customizable templates, a rich text editor, and features like live preview, resume analytics, and AI-powered suggestions.
 
-## Features
-
-- **User Authentication**: Secure sign-up and login using ASP.NET Identity.
-- **Multiple Resume Templates**: Professional, creative, and minimalist templates.
-- **Rich Text Editor**: Integrated TinyMCE or CKEditor for enhanced formatting.
-- **Live Preview**: See real-time updates to your resume as you edit.
-- **PDF Export**: Export your resume as a PDF, with options for font customization.
-- **Download and Share**: Download your resume or share a link with others.
-- **Resume Analytics**: Track views and downloads of your resume.
-- **Mobile Friendly**: Optimized for both desktop and mobile devices.
-- **AI Suggestions**: Receive AI-powered resume suggestions based on industry standards.
-- **Cloud Storage**: Integration with AWS S3 or Azure Blob Storage for resume storage.
-
 ## Installation
 
 ### Prerequisites
@@ -31,3 +18,16 @@ Before running the project, ensure you have the following installed:
    ```bash
    git clone https://github.com/yourusername/online-resume-builder.git
    cd online-resume-builder
+
+2. Install the necessary dependencies:
+   ```bash
+   dotnet restore
+
+3. Configure the database connection in appsettings.json:
+
+   {
+  "ConnectionStrings": {
+    "ResumeContext": "Data Source=your_database_file.db"
+  }
+ }
+
